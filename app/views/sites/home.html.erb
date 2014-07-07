@@ -1,0 +1,36 @@
+<h1>Foodie Home</h1>
+<p>Welcome to the Foodie website where you can list all your favorite (and un-favorite) foods!</p>
+
+<a href="#hello" data-toggle="modal" class="btn btn-default">HELLO</a>
+<a href="#create-event" data-toggle="modal" class="btn btn-success">Create Event</a>
+<%= render('events/new_modal') %>
+
+<div id="countdown"></div>
+<p id="note"></p>
+
+<div id="calendar"></div>
+
+<div id="restaurants">
+
+</div>
+
+<select class="chosen-select">
+  <option>Ruby</option>
+  <option>Python</option>
+  <option>Java</option>
+  <option>PHP</option>
+</select>
+
+<div id="hello" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="hello-modal-label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4>Hello Modal</h4>
+      </div>
+      <div class="modal-body">
+        <p>YO YO !</p>
+      </div>
+    </div>
+  </div>
+</div>
