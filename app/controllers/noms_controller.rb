@@ -5,7 +5,7 @@ class NomsController < ApplicationController
   # GET /noms
   # GET /noms.json
   def index
-    @noms = @restaurant(params[:page]).per(5)
+    @noms = @restaurant.noms.page(params[:page]).per(5)
 
   end
 
