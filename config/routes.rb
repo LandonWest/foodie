@@ -8,6 +8,10 @@ Rails.application.routes.draw do
 
   root 'sites#home'
   get '/places' => 'sites#places'
+  get '/contact' => 'sites#contact'
+  post '/contact' => 'sites#contact'
+  get '/login' => 'sites#login'
+  get '/report' => 'sites#report'
 end
 
 
