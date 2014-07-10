@@ -11,6 +11,11 @@ gem 'sass-rails', '~> 4.0.3'
 
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
+
+gem 'mini_magick'
+#used for file uploads
+gem 'carrierwave'
+
 # used for pagination
 gem 'kaminari'
 gem 'chosen-rails'
@@ -39,6 +44,7 @@ end
 
 gem 'rails_12factor', group: :production
 gem 'thin'
+
 
 
 # Use ActiveModel has_secure_password

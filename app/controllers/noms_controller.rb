@@ -6,7 +6,6 @@ class NomsController < ApplicationController
   # GET /noms.json
   def index
     @noms = @restaurant.noms.page(params[:page]).per(5)
-
   end
 
   # GET /noms/1
@@ -26,11 +25,11 @@ class NomsController < ApplicationController
   # POST /noms
   # POST /noms.json
   def create
-    @nom = Nom.new(nom_params)
+    @nom = @restaurant.noms.build(nom_params)
 
     respond_to do |format|
       if @nom.save
-        format.html { redirect_to @nom, notice: 'Nom was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Nom was successfully created.' }
         format.json { render :show, status: :created, location: @nom }
       else
         format.html { render :new }
@@ -67,7 +66,7 @@ class NomsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
 
     def set_restaurant
-
+      @restaurant = Restaurant.find(params[:restaurant_id])
     end
 
     def set_nom

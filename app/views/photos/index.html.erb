@@ -1,0 +1,16 @@
+<h1>Photos#index</h1>
+
+<%= form_for([@nom, @photo]) do |f| %>
+  <%= f.label(:image, 'Upload Photo') %>
+  <%= f.file_field(:image) %>
+  <%= f.submit('Upload', class: 'btn btn-primary') %>
+<% end %>
+
+<div class="row">
+  <% @photos.each do |photo| %>
+    <% next if photo.image.blank? %>
+    <div class="col-sm-3">
+      <%= image_tag(photo.image.url(:big)) %>
+    </div>
+  <% end %>
+</div>

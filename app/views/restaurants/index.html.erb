@@ -3,6 +3,7 @@
 <table class="table">
   <thead>
     <tr>
+      <th></th>
       <th>Name</th>
       <th>Address</th>
       <th>Noms</th>
@@ -13,11 +14,12 @@
   <tbody>
     <% @restaurants.each do |restaurant| %>
       <tr>
+        <td><%= image_tag(restaurant.logo.url(:thumb)) %></td>
         <td><%= restaurant.name %></td>
         <td><%= restaurant.address %></td>
         <td><%= link_to('View Noms', restaurant_noms_path(restaurant.id)) %></td>
-        <td><%= link_to 'Show', restaurant_nom_path(restaurant.id, nom.id) %></td>
-        <td><%= link_to 'Edit', restaurant_edit_nom_path(restaurant.id, nom.id) %></td>
+        <td><%= link_to 'Show', restaurant %></td>
+        <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
         <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

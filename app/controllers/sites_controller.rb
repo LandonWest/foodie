@@ -1,5 +1,4 @@
 class SitesController < ApplicationController
-
   def home
     @event = Event.new
   end
@@ -23,7 +22,7 @@ class SitesController < ApplicationController
   end
 
   def login
-    UserMailer.welcome('landonwest5@gmail.com').deliver
+    #UserMailer.welcome('landonwest5@gmail.com').deliver
     redirect_to root_path
   end
 
@@ -31,5 +30,4 @@ class SitesController < ApplicationController
     AdminMailer.report.deliver
     redirect_to root_path
   end
-
 end
